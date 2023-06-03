@@ -38,6 +38,14 @@ a:hover{text-decoration: none; cursor:pointer;}
 }
 
 @font-face {
+	font-family:'FrutigerLTStd-Light';
+	src: url('./fonts/FrutigerLTStd-Light/FrutigerLTStd-Light.woff2');
+	src: url('./fonts/FrutigerLTStd-Light/FrutigerLTStd-Light.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
 	font-family:'LyonDisplay-Regular';
 	src: url('./fonts/LyonDisplay-Regular/Lyon%20Display%20Regular.woff2');
 	src: url('./fonts/LyonDisplay-Regular/Lyon%20Display%20Regular.woff2') format('woff2');
@@ -74,6 +82,83 @@ a:hover{text-decoration: none; cursor:pointer;}
 }
 .bloc-sm{
 	padding:20px;
+}
+
+
+/* Background Effects */
+
+.parallax__container {
+	clip: rect(0, auto, auto, 0);
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index:-1;
+}
+.parallax {
+	position: fixed;
+	top: 0;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+/* Dark theme */
+
+.d-bloc{
+	color:rgba(255,255,255,.7);
+}
+.d-bloc button:hover{
+	color:rgba(255,255,255,.9);
+}
+.d-bloc .icon-round,.d-bloc .icon-square,.d-bloc .icon-rounded,.d-bloc .icon-semi-rounded-a,.d-bloc .icon-semi-rounded-b{
+	border-color:rgba(255,255,255,.9);
+}
+.d-bloc .divider-h span{
+	border-color:rgba(255,255,255,.2);
+}
+.d-bloc .a-btn,.d-bloc .navbar a, .d-bloc a .icon-sm, .d-bloc a .icon-md, .d-bloc a .icon-lg, .d-bloc a .icon-xl, .d-bloc h1 a, .d-bloc h2 a, .d-bloc h3 a, .d-bloc h4 a, .d-bloc h5 a, .d-bloc h6 a, .d-bloc p a{
+	color:rgba(255,255,255,.6);
+}
+.d-bloc .a-btn:hover,.d-bloc .navbar a:hover,.d-bloc a:hover .icon-sm, .d-bloc a:hover .icon-md, .d-bloc a:hover .icon-lg, .d-bloc a:hover .icon-xl, .d-bloc h1 a:hover, .d-bloc h2 a:hover, .d-bloc h3 a:hover, .d-bloc h4 a:hover, .d-bloc h5 a:hover, .d-bloc h6 a:hover, .d-bloc p a:hover{
+	color:rgba(255,255,255,1);
+}
+.d-bloc .navbar-toggle .icon-bar{
+	background:rgba(255,255,255,1);
+}
+.d-bloc .btn-wire,.d-bloc .btn-wire:hover{
+	color:rgba(255,255,255,1);
+	border-color:rgba(255,255,255,1);
+}
+.d-bloc .card{
+	color:rgba(0,0,0,.5);
+}
+.d-bloc .card button:hover{
+	color:rgba(0,0,0,.7);
+}
+.d-bloc .card icon{
+	border-color:rgba(0,0,0,.7);
+}
+.d-bloc .card .divider-h span{
+	border-color:rgba(0,0,0,.1);
+}
+.d-bloc .card .a-btn{
+	color:rgba(0,0,0,.6);
+}
+.d-bloc .card .a-btn:hover{
+	color:rgba(0,0,0,1);
+}
+.d-bloc .card .btn-wire, .d-bloc .card .btn-wire:hover{
+	color:rgba(0,0,0,.7);
+	border-color:rgba(0,0,0,.3);
 }
 
 
@@ -170,6 +255,13 @@ a:hover{text-decoration: none; cursor:pointer;}
 	right:100%;
 	left:auto}
 }
+/* = Bric adjustment margins
+-------------------------------------------------------------- */
+
+.mg-md{
+	margin-top:10px;
+	margin-bottom:20px;
+}
 
 /* = Buttons
 -------------------------------------------------------------- */
@@ -187,6 +279,16 @@ button{
 
 
 
+/* = Text & Icon Styles
+-------------------------------------------------------------- */
+.blockquote{
+	padding:0 20px;
+	border-left:2px solid;
+}
+.blockquote.text-end{
+	border-left:0;
+	border-right:2px solid;
+}
 
 
 .card-sq, .card-sq .card-header, .card-sq .card-footer{
@@ -263,15 +365,54 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 }
 .img-style{
 	height:500px;
+	width:689px;
 }
 .p-style{
-	font-family:"LyonDisplay-Regular";
+	font-family:"LyonText-Regular";
+	font-size:20px;
 }
 .h1-style{
 	font-family:"LyonText-Regular";
+	font-size:44px;
+}
+.h3-style{
+	font-family:"LyonDisplay-Regular";
+	font-size:34px;
 }
 .p-bloc-1-style{
-	font-family:"LyonDisplay-Regular";
+	font-family:"LyonText-Regular";
+	font-size:20px;
+}
+.p-5-style{
+	font-size:13px;
+}
+.h5-style{
+	font-family:"FrutigerLTStd-Light";
+	font-size:20px;
+}
+.p-4-style{
+	font-size:27px;
+	font-family:"LyonText-Regular";
+	color:var(--swatch-var-OpenAI-Blue-copy-1)!important;
+	font-weight:normal;
+}
+.h6-style{
+	font-size:20px;
+	font-family:"FrutigerLTStd-Roman";
+}
+.p1-link{
+	font-family:"LyonText-Regular";
+	font-size:20px;
+	text-decoration:underline!important;
+	color:var(--swatch-var-OpenAI-Blue)!important;
+}
+.p1-link:hover{
+	background-color:var(--swatch-var-OpenAI-Blue);
+	color:var(--swatch-var-White)!important;
+	background-size:auto auto;
+}
+.h3-bloc-5-style{
+	font-family:"LyonText-Regular";
 }
 
 /* = Colour
@@ -280,17 +421,59 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 /* Swatch Variables */
 :root{
 	
-	--swatch-var-450:#000000;
+	--swatch-var-450:rgba(0,0,0,1.00);
+	
+	--swatch-var-1563:rgba(250,195,120,1.00);
+	
+	--swatch-var-Pastel-pink:rgba(247,202,195,1.00);
+	
+	--swatch-var-Manhattan:rgba(247,202,147,1.00);
+	
+	--swatch-var-OpenAI-Blue:rgba(33,83,83,1.00);
+	
+	--swatch-var-Hyperlink:#919191;
+	
+	--swatch-var-White:rgba(255,255,255,1.00);
+	
+	--swatch-var-OpenAI-Blue-copy-1:rgba(232,116,116,1.00);
 	
 }
 
 
+/* Background colour styles */
+
+.bgc-2645{
+	background-color:var(--swatch-var-OpenAI-Blue);
+}
+.bgc-1877{
+	background-color:var(--swatch-var-Pastel-pink);
+}
+.bgc-450{
+	background-color:var(--swatch-var-450);
+}
 
 /* Text colour styles */
 
+.tc-6158{
+	color:var(--swatch-var-Manhattan)!important;
+}
 .tc-450{
 	color:var(--swatch-var-450)!important;
 }
+.tc-3991{
+	color:var(--swatch-var-White)!important;
+}
+
+/* Link colour styles */
+
+.ltc-6158{
+	color:var(--swatch-var-Manhattan)!important;
+}
+.ltc-6158:hover{
+	color:#C49760!important;
+}
+
+/* Bloc image backgrounds */
 
 
 
@@ -373,3 +556,10 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	   height: 320px;
     }
 }
+@media (max-width: 575px){
+	.footer-link{
+		text-align:center;
+	}
+	
+}
+
